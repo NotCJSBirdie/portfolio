@@ -4,7 +4,7 @@ export const metadata = {
   title: "Carl Serquiña",
   description: "Full Stack Web Developer Portfolio",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/faviconprofile.ico",
   },
 };
 

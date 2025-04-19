@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+.gridContainer {
+  display: grid;
+  gap: 10px;
+  padding: 15px;
+  margin: 0;
+  background-color: #f2ffe9;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 992px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, minmax(120px, 1fr));
+  }
+  .gridContainer .tileLink.featured1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+  .gridContainer .tileLink.featured2 {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+  }
+}
+
+@media (max-width: 991px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .gridContainer .tileLink.featured1,
+  .gridContainer .tileLink.featured2 {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .gridContainer .tileLink.featured1,
+  .gridContainer .tileLink.featured2 {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+}
+
+.tileLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tile {
+  background-color: var(--background);
+  color: var(--color);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.tile.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 15px rgba(250, 112, 112, 0.5);
+}
+
+.tile.alive {
+  animation: alive 1s ease-in-out;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 60%;
+  flex: 1;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.textContainer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 8px;
+}
+
+.tile.featured h3,
+.tile h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  margin: 8px 0;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 8px;
+  color: var(--color);
+}
+
+.tile.featured p,
+.tile p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: var(--color);
+}
+
+@media (max-width: 991px) {
+  .tile.featured h3,
+  .tile h3 {
+    font-size: 1.5rem;
+  }
+  .tile.featured p,
+  .tile p {
+    font-size: 0.9rem;
+  }
+  .textContainer {
+    padding: 10px 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tile.featured h3,
+  .tile h3 {
+    font-size: 1.25rem;
+  }
+  .tile.featured p,
+  .tile p {
+    font-size: 0.875rem;
+  }
+  .textContainer {
+    padding: 8px 4px;
+  }
+}
+
+.projectsContainer {
+  padding: 15px;
+  background-color: #f2ffe9;
+}
+
+.projectsHeading {
+  text-align: center;
+  color: #557c55;
+  margin: 15px 0;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 15px;
+  background-color: #557c55;
+  color: #f2ffe9;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.header p {
+  margin: 8px 0 0;
+  font-size: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.experiencesContainer {
+  padding: 15px;
+  background-color: #f2ffe9;
+}
+
+.experiencesContainer h2 {
+  text-align: center;
+  color: #557c55;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.experiencesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+@media (max-width: 991px) {
+  .experiencesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.experienceCard {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.experienceCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 15px rgba(250, 112, 112, 0.7);
+}
+
+.experienceCard h3 {
+  color: #557c55;
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.experienceCard p {
+  color: #557c55;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.experienceCard ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.experienceCard li {
+  color: #557c55;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.skillsContainer {
+  padding: 15px;
+  background-color: #f2ffe9;
+}
+
+.skillsContainer h2 {
+  text-align: center;
+  color: #557c55;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.skillCategory {
+  margin-bottom: 20px;
+}
+
+.skillCategory h3 {
+  color: #557c55;
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 991px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skillCell {
+  padding: 8px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.skillCell.skillShadow {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.skillCell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(250, 112, 112, 0.5);
+}
+
+.skillCell.pulse {
+  animation: pulse 1s ease-in-out;
+}
+
+.contactContainer {
+  padding: 15px;
+  background-color: #f2ffe9;
+}
+
+.contactContainer h2 {
+  text-align: center;
+  color: #557c55;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactItem {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+  color: #557c55;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.contactItem:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 15px rgba(250, 112, 112, 0.7);
+}
+
+.contactItem strong {
+  color: #557c55;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.contactItem a {
+  color: #fa7070;
+  text-decoration: none;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-weight: 400;
+}
+
+.contactItem a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #557c55;
+  color: #f2ffe9;
+  font-family: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .projectsHeading,
+  .header h1,
+  .experiencesContainer h2,
+  .skillsContainer h2,
+  .skillCategory h3,
+  .contactContainer h2,
+  .experienceCard h3 {
+    font-size: 1.5rem;
+  }
+  .header p,
+  .experienceCard p,
+  .experienceCard li,
+  .skillCell,
+  .contactItem,
+  .footer {
+    font-size: 0.9rem;
+  }
+  .projectsContainer,
+  .experiencesContainer,
+  .skillsContainer,
+  .contactContainer,
+  .header {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .projectsHeading,
+  .header h1,
+  .experiencesContainer h2,
+  .skillsContainer h2,
+  .skillCategory h3,
+  .contactContainer h2,
+  .experienceCard h3 {
+    font-size: 1.25rem;
+  }
+  .header p,
+  .experienceCard p,
+  .experienceCard li,
+  .skillCell,
+  .contactItem,
+  .footer {
+    font-size: 0.875rem;
+  }
+  .projectsContainer,
+  .experiencesContainer,
+  .skillsContainer,
+  .contactContainer,
+  .header {
+    padding: 8px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes alive {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(250, 112, 112, 0.5);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

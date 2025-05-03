@@ -73,6 +73,17 @@ const projects = [
 
 const experiences = [
   {
+    title: "Frontend Engineer II",
+    company: "Outliant",
+    location: "Remote (Austin, Texas)",
+    date: "December 2024 - Present",
+    achievements: [
+      "Developed and launched the DECA Dental website, a patient booking tool built with Webflow, HTML, CSS, and JavaScript, serving dental patients across the US with streamlined appointment scheduling.",
+      "Designed and implemented a new Careers Page for DECA Dental, creating a job board from scratch using HTML, CSS, JavaScript, the Ashby Job Board API, and Cloudflare Workers, enhancing hiring interactions through an improved UI.",
+      "Contributed to the Location Finder module using the MapBox API, enabling users to locate the nearest dental offices on an interactive map, improving accessibility and user engagement.",
+    ],
+  },
+  {
     title: "Frontend Web Developer",
     company: "Token Metrics LLC",
     location: "Remote (Austin, Texas)",
@@ -136,6 +147,8 @@ const skillCategories = [
       "MySQL",
       "PostgreSQL",
       "Firebase",
+      "Webflow",
+      "Cloudflare",
     ],
   },
   {

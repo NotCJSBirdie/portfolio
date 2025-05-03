@@ -171,8 +171,8 @@ const contactInfo = [
   },
   {
     type: "Email",
-    value: "serquinajhunloprofessional@gmail.com",
-    href: "mailto:serquinajhunloprofessional@gmail.com",
+    value: "carlserquina.dev@gmail.com",
+    href: "mailto:carlserquina.dev@gmail.com",
   },
   {
     type: "LinkedIn",

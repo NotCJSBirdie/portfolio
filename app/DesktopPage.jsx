@@ -21,8 +21,6 @@ const getTextColor = (bg) => {
 const projects = [
   {
     title: "Token Metrics Loyalty Program",
-    description:
-      "A platform rewarding user engagement, built with Next.js and Tailwind CSS.",
     image: "/showcase/token-metrics-loyalty.png",
     alt: "Loyalty Program Website screenshot",
     featured: true,
@@ -30,8 +28,6 @@ const projects = [
   },
   {
     title: "Flexisource IT Employee Portal",
-    description:
-      "Portal improving HR efficiency by 25%, built with modern web technologies.",
     image: "/showcase/flexisource-portal.png",
     alt: "HRIS Portal screenshot",
     featured: true,
@@ -39,32 +35,24 @@ const projects = [
   },
   {
     title: "Token Metrics 3.0",
-    description:
-      "Token evaluation tools empowering 200,000+ users, built with React.js.",
     image: "/showcase/token-metrics.png",
     alt: "Token Metrics 3.0 screenshot",
     link: "https://www.tokenmetrics.com/",
   },
   {
     title: "Paradox Interactive Gaming Store",
-    description:
-      "E-commerce platform increasing revenue by 25%, built with React.js.",
     image: "/showcase/paradox-store.png",
     alt: "Gaming Store website screenshot",
     link: "https://www.paradoxinteractive.com/our-games/discover",
   },
   {
     title: "Novari Collective Interior Design",
-    description:
-      "Responsive website improving engagement by 40%, built with Next.js.",
     image: "/showcase/novari.png",
     alt: "Interior Design Website screenshot",
     link: "https://novaricollective.com.au/",
   },
   {
     title: "Recime Recipe Website",
-    description:
-      "Recipe website attracting 15% more users, built during Flexisource tenure.",
     image: "/showcase/recime.png",
     alt: "Recipe App screenshot",
     link: "https://www.recime.app/",
@@ -77,55 +65,30 @@ const experiences = [
     company: "Outliant",
     location: "Remote (Austin, Texas)",
     date: "December 2024 - Present",
-    achievements: [
-      "Developed and launched the DECA Dental website, a patient booking tool built with Webflow, HTML, CSS, and JavaScript, serving dental patients across the US with streamlined appointment scheduling.",
-      "Designed and implemented a new Careers Page for DECA Dental, creating a job board from scratch using HTML, CSS, JavaScript, the Ashby Job Board API, and Cloudflare Workers, enhancing hiring interactions through an improved UI.",
-      "Contributed to the Location Finder module using the MapBox API, enabling users to locate the nearest dental offices on an interactive map, improving accessibility and user engagement.",
-    ],
   },
   {
     title: "Frontend Web Developer",
     company: "Token Metrics LLC",
     location: "Remote (Austin, Texas)",
     date: "March 2024 - August 2024",
-    achievements: [
-      "Developed and launched a loyalty program website, increasing customer retention by 15% and reaching over 200,000 users.",
-      "Built the Token Metrics 3.0 platform, enabling over 200,000 users to make informed investment decisions, resulting in a 20% boost in user engagement.",
-      "Integrated personalized token evaluation features on the TokenLists Page, enhancing the platform’s user interaction and data analysis capabilities.",
-    ],
   },
   {
     title: "Developer",
     company: "Paradox Interactive AB",
     location: "Stockholm, Sweden",
     date: "August 2023 - January 2024",
-    achievements: [
-      "Contributed to the development of a gaming store website, driving a 25% revenue increase by improving user experience and functionality.",
-      "Enhanced product sales by 18% through the creation of a webshop using modern web technologies, leading to higher customer satisfaction.",
-      "Refined SDK documentation, increasing development efficiency by 30% and supporting the successful delivery of numerous ongoing projects.",
-    ],
   },
   {
     title: "Frontend Developer",
     company: "Flexisource IT",
     location: "Makati, Philippines",
     date: "April 2022 - June 2023",
-    achievements: [
-      "Developed a comprehensive website for an interior design company, streamlining client interactions by 40% through improved online services.",
-      "Built an employee portal, improving HR workflow efficiency by 25% and simplifying administrative processes.",
-      "Created a recipe and food ingredients website, attracting 15% more active users by delivering a user-friendly interface and engaging content.",
-    ],
   },
   {
     title: "Frontend Developer",
     company: "Self-Employed/Freelance",
     location: "Dumaguete, Philippines",
     date: "March 2018 - April 2022",
-    achievements: [
-      "Delivered a scalable e-library platform for a startup within 6 months, supporting the company’s growth and content management needs.",
-      "Migrated UI components to a modern design system, improving codebase maintainability by 35% and reducing future development time.",
-      "Developed multiple e-commerce platforms, increasing performance by 20% through the integration of REST and GraphQL APIs.",
-    ],
   },
 ];
 
@@ -282,7 +245,6 @@ function DesktopPage() {
                   </div>
                   <div className={styles.textContainer}>
                     <h3>{project.title}</h3>
-                    <p>{project.description}</p>
                   </div>
                 </div>
               </Link>
@@ -305,11 +267,6 @@ function DesktopPage() {
               <p>
                 {exp.location} | {exp.date}
               </p>
-              <ul>
-                {exp.achievements.map((achievement, i) => (
-                  <li key={i}>{achievement}</li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

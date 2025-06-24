@@ -124,6 +124,11 @@ const skillCategories = [
       "Firebase",
       "Webflow",
       "Cloudflare",
+      "AWS RDS",
+      "AWS Lambda",
+      "AWS AppSync",
+      "Serverless",
+      "CI/CD Deployments",
     ],
   },
   {

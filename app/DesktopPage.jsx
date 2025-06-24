@@ -27,6 +27,18 @@ const projects = [
     link: "https://www.tokenmetrics.com/",
   },
   {
+    title: "Deca Dental Booking Website",
+    image: "/showcase/deca-dental.png",
+    alt: "Deca Dental screenshot",
+    link: "https://www.myidealdental.com/",
+  },
+  {
+    title: "Food Cost Manager App",
+    image: "/showcase/food-cost-manager.png",
+    alt: "Food Cost Manager App screenshot",
+    link: "https://frontend-food-cost.vercel.app/",
+  },
+  {
     title: "Flexisource IT Employee Portal",
     image: "/showcase/flexisource-portal.png",
     alt: "HRIS Portal screenshot",
@@ -56,18 +68,6 @@ const projects = [
     image: "/showcase/recime.png",
     alt: "Recipe App screenshot",
     link: "https://www.recime.app/",
-  },
-  {
-    title: "Deca Dental Booking Website",
-    image: "/showcase/deca-dental.png",
-    alt: "Deca Dental screenshot",
-    link: "https://www.myidealdental.com/",
-  },
-  {
-    title: "Food Cost Manager App",
-    image: "/showcase/food-cost-manager.png",
-    alt: "Food Cost Manager App screenshot",
-    link: "https://frontend-food-cost.vercel.app/",
   },
 ];
 

@@ -217,9 +217,8 @@ function DesktopPage() {
       <header className={styles.header}>
         <h1>CARL SERQUIÑA</h1>
         <p>
-          Full Stack Web Developer specializing in Next.js, React.js, and
-          Vue.js. Passionate about creating engaging and efficient web
-          applications.
+          Experienced Full-Stack Developer with 6+ years building scalable SaaS
+          applications using TypeScript, React, GraphQL, PostgreSQL, and AWS.
         </p>
       </header>
       <div className={styles.projectsContainer}>

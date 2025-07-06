@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
 import styles from "./desktop.module.css";
 
@@ -23,7 +23,6 @@ const projects = [
     title: "Token Metrics Loyalty Program",
     image: "/showcase/token-metrics-loyalty.png",
     alt: "Loyalty Program Website screenshot",
-    featured: true,
     link: "https://www.tokenmetrics.com/",
     description:
       "Comprehensive loyalty platform with 15% customer retention increase",
@@ -47,7 +46,6 @@ const projects = [
     title: "Flexisource IT Employee Portal",
     image: "/showcase/flexisource-portal.png",
     alt: "HRIS Portal screenshot",
-    featured: true,
     link: "https://flexisourceit.com.au/",
     description: "Employee portal improving HR workflow efficiency by 25%",
   },
@@ -300,38 +298,6 @@ const contactInfo = [
 ];
 
 function DesktopPage() {
-  const projectRefs = useRef([]);
-  const skillRefs = useRef([]);
-
-  useEffect(() => {
-    const aliveInterval = setInterval(() => {
-      const index = Math.floor(Math.random() * projectRefs.current.length);
-      const tile = projectRefs.current[index];
-      if (tile && !tile.classList.contains(styles.alive)) {
-        tile.classList.add(styles.alive);
-        setTimeout(() => {
-          tile.classList.remove(styles.alive);
-        }, 1000);
-      }
-    }, 5000 + Math.random() * 5000);
-
-    const pulseInterval = setInterval(() => {
-      const index = Math.floor(Math.random() * skillRefs.current.length);
-      const cell = skillRefs.current[index];
-      if (cell && !cell.classList.contains(styles.pulse)) {
-        cell.classList.add(styles.pulse);
-        setTimeout(() => {
-          cell.classList.remove(styles.pulse);
-        }, 1000);
-      }
-    }, 3000 + Math.random() * 5000);
-
-    return () => {
-      clearInterval(aliveInterval);
-      clearInterval(pulseInterval);
-    };
-  }, []);
-
   return (
     <div className={styles.pageContainer}>
       {/* Header */}
@@ -347,35 +313,29 @@ function DesktopPage() {
 
       {/* Projects Section */}
       <section className={styles.projectsContainer}>
-        <h2 className={styles.projectsHeading}>Featured Projects</h2>
-        <div className={styles.gridContainer}>
+        <h2>Featured Projects</h2>
+        <div className={styles.projectsGrid}>
           {projects.map((project, index) => {
             const bgColor = palette[index % palette.length];
             const textColor = getTextColor(bgColor);
-            const tileClass = project.featured
-              ? `${styles.tile} ${styles.featured} ${styles.shadow}`
-              : `${styles.tile} ${styles.shadow}`;
-            const linkClass = project.featured
-              ? `${styles.tileLink} ${
-                  index === 0 ? styles.featured1 : styles.featured2
-                }`
-              : styles.tileLink;
 
             return (
-              <Link key={index} href={project.link} className={linkClass}>
+              <Link
+                key={index}
+                href={project.link}
+                className={styles.projectLink}
+              >
                 <div
-                  ref={(el) => (projectRefs.current[index] = el)}
-                  className={tileClass}
+                  className={styles.projectCard}
                   style={{
-                    "--background": bgColor,
-                    "--color": textColor,
-                    "--index": index,
+                    backgroundColor: bgColor,
+                    color: textColor,
                   }}
                 >
-                  <div className={styles.imageContainer}>
+                  <div className={styles.projectImage}>
                     <img src={project.image} alt={project.alt} />
                   </div>
-                  <div className={styles.textContainer}>
+                  <div className={styles.projectContent}>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
                   </div>
@@ -387,16 +347,12 @@ function DesktopPage() {
       </section>
 
       {/* Work Experience */}
-      <section className={styles.experiencesContainer}>
+      <section className={styles.experienceSection}>
         <h2>Work Experience</h2>
-        <div className={styles.experiencesGrid}>
+        <div className={styles.experienceGrid}>
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className={styles.experienceCard}
-              style={{ "--index": index }}
-            >
-              <div className={styles.expHeader}>
+            <div key={index} className={styles.experienceCard}>
+              <div className={styles.experienceHeader}>
                 <h3>{exp.title}</h3>
                 <div className={styles.companyInfo}>
                   <span className={styles.company}>{exp.company}</span>
@@ -405,7 +361,7 @@ function DesktopPage() {
                 <p className={styles.date}>{exp.date}</p>
               </div>
 
-              <div className={styles.expContent}>
+              <div className={styles.experienceContent}>
                 <ul className={styles.highlights}>
                   {exp.highlights.map((highlight, i) => (
                     <li key={i}>{highlight}</li>
@@ -429,7 +385,7 @@ function DesktopPage() {
       </section>
 
       {/* Certifications Section */}
-      <section className={styles.certificationsContainer}>
+      <section className={styles.certificationsSection}>
         <h2>Certifications & Achievements</h2>
         <div className={styles.certificationsGrid}>
           {certifications.map((cert, index) => (
@@ -448,7 +404,7 @@ function DesktopPage() {
       </section>
 
       {/* Skills Section */}
-      <section className={styles.skillsContainer}>
+      <section className={styles.skillsSection}>
         <h2>Skills & Expertise</h2>
         {skillCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className={styles.skillCategory}>
@@ -461,12 +417,10 @@ function DesktopPage() {
                 return (
                   <div
                     key={skillIndex}
-                    ref={(el) => (skillRefs.current[globalIndex] = el)}
-                    className={`${styles.skillCell} ${styles.skillShadow}`}
+                    className={styles.skillCell}
                     style={{
                       backgroundColor: bgColor,
                       color: textColor,
-                      "--index": globalIndex,
                     }}
                   >
                     {skill}
@@ -479,15 +433,11 @@ function DesktopPage() {
       </section>
 
       {/* Contact Section */}
-      <section className={styles.contactContainer}>
+      <section className={styles.contactSection}>
         <h2>Get In Touch</h2>
         <div className={styles.contactGrid}>
           {contactInfo.map((info, index) => (
-            <div
-              key={index}
-              className={styles.contactItem}
-              style={{ "--index": index }}
-            >
+            <div key={index} className={styles.contactItem}>
               <span className={styles.contactIcon}>{info.icon}</span>
               <div className={styles.contactDetails}>
                 <strong>{info.type}:</strong>

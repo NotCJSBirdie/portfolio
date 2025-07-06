@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component {
             Something went wrong
           </h2>
           <p style={{ color: '#557c55', marginBottom: '1rem' }}>
-            We're sorry, but there was an error loading this content.
+            We&apos;re sorry, but there was an error loading this content.
           </p>
           <button
             onClick={() => window.location.reload()}

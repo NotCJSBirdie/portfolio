@@ -291,188 +291,262 @@ const contactInfo = [
 ];
 
 export default function DesktopPage() {
+  // Memoizations as before
   const memoizedProjects = useMemo(() => projects, []);
   const memoizedExperiences = useMemo(() => experiences, []);
   const memoizedSkillCategories = useMemo(() => skillCategories, []);
   const memoizedCertifications = useMemo(() => certifications, []);
   const memoizedContactInfo = useMemo(() => contactInfo, []);
 
+  // Structured Data (JSON-LD)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Carl Serquiña",
+    jobTitle: "Full Stack Web Developer",
+    url: "https://www.carlserquina.com",
+    email: "carlserquina.dev@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Dumaguete City",
+      addressCountry: "PH",
+    },
+    sameAs: [
+      "https://linkedin.com/in/carl-serquiña-ab5509201",
+      "https://www.carlserquina.com",
+    ],
+  };
+
   return (
-    <main className={styles.pageContainer}>
-      <header className={styles.header}>
-        <h1 style={{ color: "white" }}>Carl Serquiña</h1>
-        <p className={gothicA1.className}>
-          Experienced Full Stack Web Developer with 6+ years of expertise in
-          building responsive and scalable web applications using TypeScript,
-          React, Node.js, PostgreSQL, and AWS. Proficient in delivering robust
-          solutions with technologies like Next.js and Tailwind CSS, with a
-          proven ability to enhance user engagement by 20% and streamline
-          workflows by 30%.
-        </p>
-      </header>
+    <>
+      <Head>
+        <title>
+          Carl Serquiña | Full Stack Developer Portfolio in Dumaguete,
+          Philippines
+        </title>
+        <meta
+          name="description"
+          content="Carl Serquiña is a Full Stack Web Developer from Dumaguete City, Philippines. Explore projects, skills, and experiences in modern web development using TypeScript, React, Node.js, Next.js, AWS, and more."
+        />
+        <meta
+          property="og:title"
+          content="Carl Serquiña | Full Stack Developer"
+        />
+        <meta
+          property="og:description"
+          content="Portfolio of Carl Serquiña, experienced web developer specializing in React, Next.js, and cloud platforms. Based in Dumaguete City, Philippines."
+        />
+        <meta
+          property="og:image"
+          content="/showcase/token-metrics-loyalty.png"
+        />
+        <meta property="og:url" content="https://www.carlserquina.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Carl Serquiña | Full Stack Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="See the portfolio and projects of Carl Serquiña, full stack developer from Dumaguete City, Philippines."
+        />
+        <meta
+          name="twitter:image"
+          content="/showcase/token-metrics-loyalty.png"
+        />
+        <link rel="canonical" href="https://www.carlserquina.com/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </Head>
 
-      {/* Projects Section */}
-      <section
-        className={styles.projectsContainer}
-        aria-labelledby="projects-heading"
-      >
-        <h2 id="projects-heading">Projects</h2>
-        <div className={styles.projectsGrid}>
-          {memoizedProjects.map((project, idx) => (
-            <InView key={project.title} triggerOnce>
-              {({ inView, ref }) => (
-                <article
-                  ref={ref}
-                  className={styles.projectCard}
-                  tabIndex={0}
-                  aria-label={project.title}
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? "none" : "translateY(40px)",
-                    transition: "all 0.5s",
-                  }}
-                >
-                  <div className={styles.projectImageContainer}>
-                    <Image
-                      src={project.image}
-                      alt={project.alt}
-                      fill
-                      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority={idx < 2}
-                      className={styles.projectImage}
-                    />
-                  </div>
-                  <div className={styles.projectContent}>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.projectLink}
-                    >
-                      View Project
-                    </Link>
-                  </div>
-                </article>
-              )}
-            </InView>
-          ))}
-        </div>
-      </section>
+      <main className={styles.pageContainer}>
+        <header className={styles.header}>
+          <h1 style={{ color: "white" }}>Carl Serquiña</h1>
+          <p className={gothicA1.className}>
+            Experienced Full Stack Web Developer based in Dumaguete City,
+            Philippines. 6+ years developing scalable web applications with
+            TypeScript, React, Next.js, and AWS. Skilled in building responsive,
+            high-performance websites that boost engagement and streamline
+            workflows.
+          </p>
+        </header>
 
-      {/* Experience Section */}
-      <section
-        className={styles.experienceSection}
-        aria-labelledby="experience-heading"
-      >
-        <h2 id="experience-heading">Experience</h2>
-        <div className={styles.experienceGrid}>
-          {memoizedExperiences.map((exp) => (
-            <article
-              key={exp.title + exp.company}
-              className={styles.experienceCard}
-            >
-              <div className={styles.experienceHeader}>
-                <h3>{exp.title}</h3>
-              </div>
-              <div className={styles.companyInfo}>
-                <span className={styles.company}>{exp.company}</span>
-                <span className={styles.location}>{exp.location}</span>
-                <span className={styles.date}>{exp.date}</span>
-              </div>
-              <ul className={styles.highlights}>
-                {exp.highlights.map((h, i) => (
-                  <li key={i}>{h}</li>
-                ))}
-              </ul>
-              <div className={styles.techStack}>
-                <h4>Technologies</h4>
-                <div className={styles.techGrid}>
-                  {exp.technologies.map((tech) => (
-                    <span key={tech} className={styles.techBadge}>
-                      {tech}
-                    </span>
+        {/* Projects Section */}
+        <section
+          className={styles.projectsContainer}
+          aria-labelledby="projects-heading"
+        >
+          <h2 id="projects-heading">Projects</h2>
+          <div className={styles.projectsGrid}>
+            {memoizedProjects.map((project, idx) => (
+              <InView key={project.title} triggerOnce>
+                {({ inView, ref }) => (
+                  <article
+                    ref={ref}
+                    className={styles.projectCard}
+                    tabIndex={0}
+                    aria-label={project.title}
+                    style={{
+                      opacity: inView ? 1 : 0,
+                      transform: inView ? "none" : "translateY(40px)",
+                      transition: "all 0.5s",
+                    }}
+                  >
+                    <div className={styles.projectImageContainer}>
+                      <Image
+                        src={project.image}
+                        alt={project.alt}
+                        fill
+                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={idx < 2}
+                        className={styles.projectImage}
+                      />
+                    </div>
+                    <div className={styles.projectContent}>
+                      <h3>
+                        <Link
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.projectLink}
+                        >
+                          {project.title}
+                        </Link>
+                      </h3>
+                      <p>{project.description}</p>
+                    </div>
+                  </article>
+                )}
+              </InView>
+            ))}
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section
+          className={styles.experienceSection}
+          aria-labelledby="experience-heading"
+        >
+          <h2 id="experience-heading">Experience</h2>
+          <div className={styles.experienceGrid}>
+            {memoizedExperiences.map((exp) => (
+              <article
+                key={exp.title + exp.company}
+                className={styles.experienceCard}
+              >
+                <div className={styles.experienceHeader}>
+                  <h3>{exp.title}</h3>
+                </div>
+                <div className={styles.companyInfo}>
+                  <span className={styles.company}>{exp.company}</span>
+                  <span className={styles.location}>{exp.location}</span>
+                  <span className={styles.date}>{exp.date}</span>
+                </div>
+                <ul className={styles.highlights}>
+                  {exp.highlights.map((h, i) => (
+                    <li key={i}>{h}</li>
                   ))}
+                </ul>
+                <div className={styles.techStack}>
+                  <h4>Technologies</h4>
+                  <div className={styles.techGrid}>
+                    {exp.technologies.map((tech) => (
+                      <span key={tech} className={styles.techBadge}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section
+          className={styles.certificationsSection}
+          aria-labelledby="certifications-heading"
+        >
+          <h2 id="certifications-heading">Certifications</h2>
+          <div className={styles.certificationsGrid}>
+            {memoizedCertifications.map((cert) => (
+              <article key={cert.name} className={styles.certificationCard}>
+                <div className={styles.certHeader}>
+                  <h3>{cert.name}</h3>
+                </div>
+                <div className={styles.certMeta}>
+                  <span className={styles.issuer}>{cert.issuer}</span>
+                  <span className={styles.certDate}>{cert.date}</span>
+                </div>
+                <p className={styles.certDescription}>{cert.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section
+          className={styles.skillsSection}
+          aria-labelledby="skills-heading"
+        >
+          <h2 id="skills-heading">Skills</h2>
+          {memoizedSkillCategories.map((cat) => (
+            <div key={cat.category} className={styles.skillCategory}>
+              <h3>{cat.category}</h3>
+              <div className={styles.skillsGrid}>
+                {cat.skills.map((skill) => (
+                  <span key={skill} className={styles.skillCell}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Contact Section */}
+        <section
+          className={styles.contactSection}
+          aria-labelledby="contact-heading"
+        >
+          <h2 id="contact-heading">Contact</h2>
+          <div className={styles.contactGrid}>
+            {memoizedContactInfo.map((info) => (
+              <div key={info.type} className={styles.contactItem}>
+                <span className={styles.contactIcon}>{info.icon}</span>
+                <div className={styles.contactDetails}>
+                  <strong>{info.type}</strong>
+                  {info.href ? (
+                    <a
+                      href={info.href}
+                      target="_blank"
+                      rel={
+                        info.type === "LinkedIn" || info.type === "Portfolio"
+                          ? "me noopener noreferrer"
+                          : "noopener noreferrer"
+                      }
+                    >
+                      {info.value}
+                    </a>
+                  ) : (
+                    <span>{info.value}</span>
+                  )}
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section
-        className={styles.certificationsSection}
-        aria-labelledby="certifications-heading"
-      >
-        <h2 id="certifications-heading">Certifications</h2>
-        <div className={styles.certificationsGrid}>
-          {memoizedCertifications.map((cert) => (
-            <article key={cert.name} className={styles.certificationCard}>
-              <div className={styles.certHeader}>
-                <h3>{cert.name}</h3>
-              </div>
-              <div className={styles.certMeta}>
-                <span className={styles.issuer}>{cert.issuer}</span>
-                <span className={styles.certDate}>{cert.date}</span>
-              </div>
-              <p className={styles.certDescription}>{cert.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section
-        className={styles.skillsSection}
-        aria-labelledby="skills-heading"
-      >
-        <h2 id="skills-heading">Skills</h2>
-        {memoizedSkillCategories.map((cat) => (
-          <div key={cat.category} className={styles.skillCategory}>
-            <h3>{cat.category}</h3>
-            <div className={styles.skillsGrid}>
-              {cat.skills.map((skill) => (
-                <span key={skill} className={styles.skillCell}>
-                  {skill}
-                </span>
-              ))}
-            </div>
+            ))}
           </div>
-        ))}
-      </section>
+        </section>
 
-      {/* Contact Section */}
-      <section
-        className={styles.contactSection}
-        aria-labelledby="contact-heading"
-      >
-        <h2 id="contact-heading">Contact</h2>
-        <div className={styles.contactGrid}>
-          {memoizedContactInfo.map((info) => (
-            <div key={info.type} className={styles.contactItem}>
-              <span className={styles.contactIcon}>{info.icon}</span>
-              <div className={styles.contactDetails}>
-                <strong>{info.type}</strong>
-                {info.href ? (
-                  <a href={info.href} target="_blank" rel="noopener noreferrer">
-                    {info.value}
-                  </a>
-                ) : (
-                  <span>{info.value}</span>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <footer className={styles.footer}>
-        <p>
-          &copy; {new Date().getFullYear()} Carl Serquiña. All rights reserved.
-        </p>
-      </footer>
-    </main>
+        <footer className={styles.footer}>
+          <p>
+            &copy; {new Date().getFullYear()} Carl Serquiña. All rights
+            reserved.
+          </p>
+        </footer>
+      </main>
+    </>
   );
 }

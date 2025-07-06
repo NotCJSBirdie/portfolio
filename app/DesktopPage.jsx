@@ -332,7 +332,7 @@ function DesktopPage() {
                     color: textColor,
                   }}
                 >
-                  <div className={styles.projectImage}>
+                  <div className={styles.projectImageContainer}>
                     <img src={project.image} alt={project.alt} />
                   </div>
                   <div className={styles.projectContent}>
@@ -403,7 +403,7 @@ function DesktopPage() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section - FIXED */}
       <section className={styles.skillsSection}>
         <h2>Skills & Expertise</h2>
         {skillCategories.map((category, categoryIndex) => (
@@ -432,7 +432,7 @@ function DesktopPage() {
         ))}
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section - FIXED */}
       <section className={styles.contactSection}>
         <h2>Get In Touch</h2>
         <div className={styles.contactGrid}>

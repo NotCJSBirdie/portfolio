@@ -87,6 +87,12 @@
   box-shadow: 0 4px 15px rgba(85, 124, 85, 0.12);
 }
 
+/* Focus styles for better accessibility */
+.projectCard:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
 .projectImageContainer {
   width: 100%;
   height: 200px;
@@ -160,6 +166,11 @@
   background: var(--accent-red);
   color: #fff;
   text-decoration: underline;
+}
+
+.projectLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 /* Experience Section */

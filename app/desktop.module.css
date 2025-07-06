@@ -1,19 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
-/* CSS Custom Properties for Consistency */
-:root {
-  --primary-green: #557c55;
-  --light-green: #a6cf98;
-  --bg-light: #f2ffe9;
-  --accent-red: #fa7070;
-  --white: #ffffff;
-  --shadow-light: 0 4px 20px rgba(85, 124, 85, 0.1);
-  --shadow-hover: 0 8px 30px rgba(85, 124, 85, 0.15);
-  --border-radius: 12px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Base Styles - Mobile First */
 .pageContainer {
   background: linear-gradient(

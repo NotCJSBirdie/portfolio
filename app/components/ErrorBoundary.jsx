@@ -20,22 +20,22 @@ class ErrorBoundary extends React.Component {
         <div style={{
           padding: '2rem',
           textAlign: 'center',
-          backgroundColor: '#fef6e4',
+          backgroundColor: 'var(--bg-light)',
           borderRadius: '12px',
           margin: '1rem',
-          border: '1px solid #fa7070',
+          border: '1px solid var(--accent-red)',
         }}>
-          <h2 style={{ color: '#fa7070', marginBottom: '1rem' }}>
+          <h2 style={{ color: 'var(--accent-red)', marginBottom: '1rem' }}>
             Something went wrong
           </h2>
-          <p style={{ color: '#557c55', marginBottom: '1rem' }}>
+          <p style={{ color: 'var(--primary-green)', marginBottom: '1rem' }}>
             We&apos;re sorry, but there was an error loading this content.
           </p>
           <button
             onClick={() => window.location.reload()}
             style={{
-              background: '#557c55',
-              color: 'white',
+              background: 'var(--primary-green)',
+              color: 'var(--white)',
               border: 'none',
               padding: '0.5rem 1rem',
               borderRadius: '8px',

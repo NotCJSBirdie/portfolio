@@ -10,8 +10,8 @@
 /* Header */
 .header {
   text-align: center;
-  background: linear-gradient(135deg, var(--primary-green) 0%, #4a6e4a 100%);
-  color: var(--bg-light);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green) 100%);
+  color: var(--white);
   padding: 2.5rem 1rem 2rem 1rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--shadow-light);
@@ -47,12 +47,12 @@
 
 /* Projects Section */
 .projectsContainer {
-  background: #e3f6fd;
+  background: var(--bg-light);
 }
 
 .projectsContainer h2 {
   text-align: center;
-  color: var(--primary-green);
+  color: var(--text-dark);
   margin-bottom: 2rem;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 500;
@@ -175,11 +175,11 @@
 
 /* Experience Section */
 .experienceSection {
-  background: #fef6e4;
+  background: var(--bg-light);
 }
 
 .experienceSection h2 {
-  color: var(--primary-green);
+  color: var(--text-dark);
 }
 
 .experienceGrid {
@@ -258,11 +258,11 @@
 
 /* Certifications Section */
 .certificationsSection {
-  background: #f9f9f9;
+  background: var(--bg-light);
 }
 
 .certificationsSection h2 {
-  color: var(--primary-green);
+  color: var(--text-dark);
 }
 
 .certificationsGrid {
@@ -309,11 +309,11 @@
 
 /* Skills Section */
 .skillsSection {
-  background: #e4f9f5;
+  background: var(--bg-light);
 }
 
 .skillsSection h2 {
-  color: var(--primary-green);
+  color: var(--text-dark);
 }
 
 .skillCategory {
@@ -351,11 +351,11 @@
 
 /* Contact Section */
 .contactSection {
-  background: #fffbe7;
+  background: var(--bg-light);
 }
 
 .contactSection h2 {
-  color: var(--primary-green);
+  color: var(--text-dark);
 }
 
 .contactGrid {
@@ -410,7 +410,7 @@
   text-align: center;
   padding: 1.5rem;
   background: var(--primary-green);
-  color: var(--bg-light);
+  color: var(--white);
   margin-top: 2rem;
 }
 

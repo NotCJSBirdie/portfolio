@@ -4,6 +4,8 @@
   --bg-light: #f2ffe9;
   --accent-red: #fa7070;
   --white: #ffffff;
+  --text-dark: #2d3a2d;
+  --text-light: #ffffff;
   --shadow-light: 0 4px 20px rgba(85, 124, 85, 0.1);
   --shadow-hover: 0 8px 30px rgba(85, 124, 85, 0.15);
   --border-radius: 12px;
@@ -28,7 +30,7 @@ body {
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
   background: var(--bg-light);
-  color: var(--primary-green);
+  color: var(--text-dark);
   min-height: 100vh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -72,7 +74,7 @@ h5,
 h6 {
   margin: 0 0 1.5rem 0;
   font-weight: 500;
-  color: var(--primary-green);
+  color: var(--text-dark);
   letter-spacing: 0.02em;
 }
 

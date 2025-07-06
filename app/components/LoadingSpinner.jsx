@@ -11,7 +11,7 @@ export const LoadingSpinner = ({ size = 'medium', color = 'primary' }) => {
   const colorClass = {
     primary: 'var(--primary-green)',
     accent: 'var(--accent-red)',
-    white: '#ffffff',
+    white: 'var(--white)',
   }[color];
 
   return (

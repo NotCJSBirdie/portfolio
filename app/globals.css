@@ -1,42 +1,14 @@
-/* Global reset for box-sizing to ensure consistent layout calculations */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Desktop styles using Webflow's desktop breakpoint (min-width: 992px) */
-@media (min-width: 992px) {
-  body {
-    background: url("/backgrounds/subtle-pattern.jpg") fixed; /* Add a subtle pattern if desired */
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-  }
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
-    color: inherit;
-  }
-  * {
-    box-sizing: border-box;
-  }
-}
-
-/* Tablet styles (min-width: 768px and max-width: 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-/* Mobile styles (max-width: 767px) */
-@media (max-width: 767px) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
+/* app/globals.css */
+:root {
+  --primary-green: #557c55;
+  --light-green: #a6cf98;
+  --cream: #f2ffe9;
+  --coral: #fa7070;
+  --white: #ffffff;
+  --shadow-light: rgba(85, 124, 85, 0.1);
+  --shadow-medium: rgba(85, 124, 85, 0.2);
+  --shadow-heavy: rgba(85, 124, 85, 0.3);
+  --font-primary: "Special Gothic Expanded One", "Special Elite", sans-serif;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
 }

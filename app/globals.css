@@ -104,19 +104,19 @@ textarea:focus {
 }
 
 .projectsContainer {
-  background: #e3f6fd;
+  background: var(--bg-light);
 }
 .experienceSection {
-  background: #fef6e4;
+  background: var(--bg-light);
 }
 .certificationsSection {
-  background: #f9f9f9;
+  background: var(--bg-light);
 }
 .skillsSection {
-  background: #e4f9f5;
+  background: var(--bg-light);
 }
 .contactSection {
-  background: #fffbe7;
+  background: var(--bg-light);
 }
 
 @media (max-width: 991px) {

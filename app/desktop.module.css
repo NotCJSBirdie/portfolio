@@ -74,7 +74,7 @@
   flex-direction: column;
   box-shadow: 0 2px 12px rgba(85, 124, 85, 0.07);
   transition: transform 0.3s, box-shadow 0.3s;
-  background: #fff;
+  background: var(--white);
   will-change: transform, box-shadow;
   padding: 1.5rem;
   gap: 1.2rem;
@@ -100,7 +100,7 @@
   flex-shrink: 0;
   position: relative;
   border-radius: 12px;
-  background: #f1f1f1;
+  background: var(--bg-light);
 }
 
 .projectImage {
@@ -151,7 +151,7 @@
 .projectLink {
   margin-top: 0.5rem;
   background: var(--primary-green);
-  color: #fff;
+  color: var(--white);
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
   font-weight: 600;
@@ -164,12 +164,12 @@
 .projectLink:hover,
 .projectLink:focus {
   background: var(--accent-red);
-  color: #fff;
+  color: var(--white);
   text-decoration: underline;
 }
 
 .projectLink:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid var(--white);
   outline-offset: 2px;
 }
 
@@ -192,7 +192,7 @@
 
 .experienceCard {
   padding: 1.5rem;
-  background: #fff;
+  background: var(--white);
   border-radius: 12px;
   box-shadow: var(--shadow-light);
   display: flex;
@@ -275,7 +275,7 @@
 
 .certificationCard {
   padding: 1.5rem;
-  background: #fff;
+  background: var(--white);
   border-radius: 12px;
   box-shadow: var(--shadow-light);
 }
@@ -367,7 +367,7 @@
 }
 
 .contactItem {
-  background: #fff;
+  background: var(--white);
   padding: 1rem;
   border-radius: 8px;
   box-shadow: var(--shadow-light);

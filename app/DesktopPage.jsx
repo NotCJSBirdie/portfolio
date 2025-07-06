@@ -99,7 +99,7 @@ export default function DesktopPage() {
 
       <main className={styles.pageContainer}>
         <header className={styles.header}>
-          <h1 style={{ color: "white" }}>Carl Serquiña</h1>
+          <h1>Carl Serquiña</h1>
           <p className={gothicA1.className}>
             Experienced Full Stack Web Developer based in Dumaguete City,
             Philippines. 6+ years developing scalable web applications with

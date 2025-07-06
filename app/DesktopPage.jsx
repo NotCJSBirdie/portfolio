@@ -4,6 +4,7 @@ import Image from "next/image";
 import { InView } from "react-intersection-observer";
 import styles from "./desktop.module.css";
 import { Gothic_A1 } from "next/font/google";
+import Head from "next/head";
 
 const gothicA1 = Gothic_A1({
   weight: "400",

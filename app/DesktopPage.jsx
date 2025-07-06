@@ -17,22 +17,6 @@ const gothicA1 = Gothic_A1({
   display: "swap",
 });
 
-const palette = ["#F2FFE9", "#A6CF98", "#557C55", "#FA7070"];
-
-const getTextColor = (bg) => {
-  switch (bg) {
-    case "#F2FFE9":
-    case "#A6CF98":
-      return "#557C55";
-    case "#557C55":
-      return "#F2FFE9";
-    case "#FA7070":
-      return "#FFFFFF";
-    default:
-      return "#000000";
-  }
-};
-
 const projects = [
   {
     title: "Token Metrics Loyalty Program",
@@ -312,7 +296,7 @@ const contactInfo = [
   },
 ];
 
-function DesktopPage() {
+export default function DesktopPage() {
   const memoizedProjects = useMemo(() => projects, []);
   const memoizedExperiences = useMemo(() => experiences, []);
   const memoizedSkillCategories = useMemo(() => skillCategories, []);
@@ -320,212 +304,177 @@ function DesktopPage() {
   const memoizedContactInfo = useMemo(() => contactInfo, []);
 
   return (
-    <div className={`${styles.pageContainer} ${specialElite.className}`}>
+    <main className={styles.pageContainer}>
       <header className={styles.header}>
-        <h1>Carl Serquiña</h1>
-        <p>
-          Experienced Full Stack Web Developer with 6+ years of expertise in
-          building responsive and scalable web applications using TypeScript,
-          React, Node.js, PostgreSQL, and AWS. Proven ability to enhance user
-          engagement by 20% and streamline workflows by 30%.
+        <h1 className={specialElite.className}>Carl Serquiña</h1>
+        <p className={gothicA1.className}>
+          Frontend Engineer | Building performant, scalable, and beautiful web
+          experiences.
         </p>
       </header>
 
-      <section className={styles.projectsContainer}>
-        <h2>Featured Projects</h2>
+      {/* Projects Section */}
+      <section
+        className={styles.projectsContainer}
+        aria-labelledby="projects-heading"
+      >
+        <h2 id="projects-heading">Projects</h2>
         <div className={styles.projectsGrid}>
-          <InView triggerOnce>
-            {({ inView, ref }) => (
-              <div ref={ref} className={styles.projectsGrid}>
-                {inView &&
-                  memoizedProjects.map((project, index) => {
-                    const bgColor = palette[index % palette.length];
-                    const textColor = getTextColor(bgColor);
-
-                    return (
-                      <Link
-                        key={index}
-                        href={project.link}
-                        className={styles.projectLink}
-                      >
-                        <div
-                          className={styles.projectCard}
-                          style={{
-                            backgroundColor: bgColor,
-                            color: textColor,
-                          }}
-                        >
-                          <div className={styles.projectImageContainer}>
-                            <Image
-                              src={project.image}
-                              alt={project.alt}
-                              width={400}
-                              height={200}
-                              sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
-                              placeholder="blur"
-                              blurDataURL="/placeholder.jpg"
-                              style={{
-                                objectFit: "cover",
-                                objectPosition: "center",
-                              }}
-                            />
-                          </div>
-                          <div className={styles.projectContent}>
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-              </div>
-            )}
-          </InView>
+          {memoizedProjects.map((project, idx) => (
+            <InView key={project.title} triggerOnce>
+              {({ inView, ref }) => (
+                <article
+                  ref={ref}
+                  className={styles.projectCard}
+                  tabIndex={0}
+                  aria-label={project.title}
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "none" : "translateY(40px)",
+                    transition: "all 0.5s",
+                  }}
+                >
+                  <div className={styles.projectImageContainer}>
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      fill
+                      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={idx < 2}
+                      className={styles.projectImage}
+                    />
+                  </div>
+                  <div className={styles.projectContent}>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.projectLink}
+                    >
+                      View Project
+                    </Link>
+                  </div>
+                </article>
+              )}
+            </InView>
+          ))}
         </div>
       </section>
 
-      <section className={styles.experienceSection}>
-        <h2>Work Experience</h2>
-        <InView triggerOnce>
-          {({ inView, ref }) => (
-            <div ref={ref} className={styles.experienceGrid}>
-              {inView &&
-                memoizedExperiences.map((exp, index) => (
-                  <div key={index} className={styles.experienceCard}>
-                    <div className={styles.experienceHeader}>
-                      <h3>{exp.title}</h3>
-                      <div className={styles.companyInfo}>
-                        <span className={styles.company}>{exp.company}</span>
-                        <span className={styles.location}>{exp.location}</span>
-                      </div>
-                      <p className={styles.date}>{exp.date}</p>
-                    </div>
-                    <div className={styles.experienceContent}>
-                      <ul className={styles.highlights}>
-                        {exp.highlights.map((highlight, i) => (
-                          <li key={i}>{highlight}</li>
-                        ))}
-                      </ul>
-                      <div className={styles.techStack}>
-                        <h4>Technologies:</h4>
-                        <div className={styles.techGrid}>
-                          {exp.technologies.map((tech, i) => (
-                            <span key={i} className={styles.techBadge}>
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      {/* Experience Section */}
+      <section
+        className={styles.experienceSection}
+        aria-labelledby="experience-heading"
+      >
+        <h2 id="experience-heading">Experience</h2>
+        <div className={styles.experienceGrid}>
+          {memoizedExperiences.map((exp) => (
+            <article
+              key={exp.title + exp.company}
+              className={styles.experienceCard}
+            >
+              <div className={styles.experienceHeader}>
+                <h3>{exp.title}</h3>
+              </div>
+              <div className={styles.companyInfo}>
+                <span className={styles.company}>{exp.company}</span>
+                <span className={styles.location}>{exp.location}</span>
+                <span className={styles.date}>{exp.date}</span>
+              </div>
+              <ul className={styles.highlights}>
+                {exp.highlights.map((h, i) => (
+                  <li key={i}>{h}</li>
                 ))}
-            </div>
-          )}
-        </InView>
+              </ul>
+              <div className={styles.techStack}>
+                <h4>Technologies</h4>
+                <div className={styles.techGrid}>
+                  {exp.technologies.map((tech) => (
+                    <span key={tech} className={styles.techBadge}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className={styles.certificationsSection}>
-        <h2>Certifications & Achievements</h2>
-        <InView triggerOnce>
-          {({ inView, ref }) => (
-            <div ref={ref} className={styles.certificationsGrid}>
-              {inView &&
-                memoizedCertifications.map((cert, index) => (
-                  <div key={index} className={styles.certificationCard}>
-                    <div className={styles.certHeader}>
-                      <h3>{cert.name}</h3>
-                      <div className={styles.certMeta}>
-                        <span className={styles.issuer}>{cert.issuer}</span>
-                        <span className={styles.certDate}>{cert.date}</span>
-                      </div>
-                    </div>
-                    <p className={styles.certDescription}>{cert.description}</p>
-                  </div>
-                ))}
-            </div>
-          )}
-        </InView>
+      {/* Certifications Section */}
+      <section
+        className={styles.certificationsSection}
+        aria-labelledby="certifications-heading"
+      >
+        <h2 id="certifications-heading">Certifications</h2>
+        <div className={styles.certificationsGrid}>
+          {memoizedCertifications.map((cert) => (
+            <article key={cert.name} className={styles.certificationCard}>
+              <div className={styles.certHeader}>
+                <h3>{cert.name}</h3>
+              </div>
+              <div className={styles.certMeta}>
+                <span className={styles.issuer}>{cert.issuer}</span>
+                <span className={styles.certDate}>{cert.date}</span>
+              </div>
+              <p className={styles.certDescription}>{cert.description}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className={styles.skillsSection}>
-        <h2>Skills & Expertise</h2>
-        <InView triggerOnce>
-          {({ inView, ref }) => (
-            <div ref={ref}>
-              {inView &&
-                memoizedSkillCategories.map((category, categoryIndex) => (
-                  <div key={categoryIndex} className={styles.skillCategory}>
-                    <h3>{category.category}</h3>
-                    <div className={styles.skillsGrid}>
-                      {category.skills.map((skill, skillIndex) => {
-                        const globalIndex = categoryIndex * 20 + skillIndex;
-                        const bgColor = palette[globalIndex % palette.length];
-                        const textColor = getTextColor(bgColor);
-                        return (
-                          <div
-                            key={skillIndex}
-                            className={styles.skillCell}
-                            style={{
-                              backgroundColor: bgColor,
-                              color: textColor,
-                            }}
-                          >
-                            {skill}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ))}
+      {/* Skills Section */}
+      <section
+        className={styles.skillsSection}
+        aria-labelledby="skills-heading"
+      >
+        <h2 id="skills-heading">Skills</h2>
+        {memoizedSkillCategories.map((cat) => (
+          <div key={cat.category} className={styles.skillCategory}>
+            <h3>{cat.category}</h3>
+            <div className={styles.skillsGrid}>
+              {cat.skills.map((skill) => (
+                <span key={skill} className={styles.skillCell}>
+                  {skill}
+                </span>
+              ))}
             </div>
-          )}
-        </InView>
+          </div>
+        ))}
       </section>
 
-      <section className={styles.contactSection}>
-        <h2>Get In Touch</h2>
-        <InView triggerOnce>
-          {({ inView, ref }) => (
-            <div ref={ref} className={styles.contactGrid}>
-              {inView &&
-                memoizedContactInfo.map((info, index) => (
-                  <div key={index} className={styles.contactItem}>
-                    <span className={styles.contactIcon}>{info.icon}</span>
-                    <div className={styles.contactDetails}>
-                      <strong>{info.type}:</strong>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <span>{info.value}</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
+      {/* Contact Section */}
+      <section
+        className={styles.contactSection}
+        aria-labelledby="contact-heading"
+      >
+        <h2 id="contact-heading">Contact</h2>
+        <div className={styles.contactGrid}>
+          {memoizedContactInfo.map((info) => (
+            <div key={info.type} className={styles.contactItem}>
+              <span className={styles.contactIcon}>{info.icon}</span>
+              <div className={styles.contactDetails}>
+                <strong>{info.type}</strong>
+                {info.href ? (
+                  <a href={info.href} target="_blank" rel="noopener noreferrer">
+                    {info.value}
+                  </a>
+                ) : (
+                  <span>{info.value}</span>
+                )}
+              </div>
             </div>
-          )}
-        </InView>
+          ))}
+        </div>
       </section>
 
       <footer className={styles.footer}>
         <p>
-          © 2025 Carl Serquiña. Built with React, Next.js, and passion for great
-          web experiences.
+          &copy; {new Date().getFullYear()} Carl Serquiña. All rights reserved.
         </p>
       </footer>
-    </div>
+    </main>
   );
-}
-
-export default React.memo(DesktopPage);
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
 }

@@ -3,13 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { InView } from "react-intersection-observer";
 import styles from "./desktop.module.css";
-import { Special_Elite, Gothic_A1 } from "next/font/google";
-
-const specialElite = Special_Elite({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { Gothic_A1 } from "next/font/google";
 
 const gothicA1 = Gothic_A1({
   weight: "400",
@@ -306,10 +300,14 @@ export default function DesktopPage() {
   return (
     <main className={styles.pageContainer}>
       <header className={styles.header}>
-        <h1 className={specialElite.className}>Carl Serquiña</h1>
+        <h1 style={{ color: "white" }}>Carl Serquiña</h1>
         <p className={gothicA1.className}>
-          Frontend Engineer | Building performant, scalable, and beautiful web
-          experiences.
+          Experienced Full Stack Web Developer with 6+ years of expertise in
+          building responsive and scalable web applications using TypeScript,
+          React, Node.js, PostgreSQL, and AWS. Proficient in delivering robust
+          solutions with technologies like Next.js and Tailwind CSS, with a
+          proven ability to enhance user engagement by 20% and streamline
+          workflows by 30%.
         </p>
       </header>
 

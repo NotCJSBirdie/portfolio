@@ -25,9 +25,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Gothic A1", Arial, sans-serif;
-  background: var(--bg-light);
-  color: var(--primary-green);
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  background: #f9fafb;
+  color: #222;
   min-height: 100vh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -35,14 +36,15 @@ body {
 }
 
 a {
-  color: var(--primary-green);
+  color: #007aff;
   text-decoration: none;
   transition: color 0.2s;
+  font-weight: 500;
 }
 
 a:hover,
 a:focus {
-  color: var(--accent-red);
+  color: #005bb5;
   text-decoration: underline;
 }
 
@@ -68,9 +70,16 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 1rem 0;
-  font-weight: 400;
-  color: var(--primary-green);
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 0.02em;
+}
+
+h2,
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 button,
@@ -90,12 +99,36 @@ button:hover,
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: var(--primary-green);
+  border-color: #007aff;
   box-shadow: var(--shadow-hover);
+}
+
+.projectsContainer {
+  background: #e3f6fd;
+}
+.experienceSection {
+  background: #fef6e4;
+}
+.certificationsSection {
+  background: #f9f9f9;
+}
+.skillsSection {
+  background: #e4f9f5;
+}
+.contactSection {
+  background: #fffbe7;
 }
 
 @media (max-width: 600px) {
   html {
     font-size: 15px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 1rem;
   }
 }

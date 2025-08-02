@@ -28,4 +28,10 @@ export const contactInfo = [
     href: "https://www.carlserquina.com",
     icon: "🌐",
   },
-]; 
+  {
+    type: "Credly",
+    value: "www.credly.com/users/carl-serquina/badges#credly",
+    href: "https://www.credly.com/users/carl-serquina/badges#credly",
+    icon: "🌐",
+  },
+];

@@ -61,7 +61,7 @@ export default function DesktopPage() {
         </title>
         <meta
           name="description"
-          content="Carl Serquiña is a Full Stack Web Developer from Dumaguete City, Philippines. Explore projects, skills, and experiences in modern web development using TypeScript, React, Node.js, Next.js, AWS, and more."
+          content="Carl Serquiña is a Full Stack Software Engineer from Dumaguete City, Philippines. Explore projects, skills, and experiences in modern web development using TypeScript, React, Node.js, Next.js, AWS, and more."
         />
         <meta
           property="og:title"

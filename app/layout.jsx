@@ -1,21 +1,21 @@
-import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
-  title: "Carl Serquiña",
-  description: "Full Stack Web Developer Portfolio",
+  title: 'Carl Serquiña',
+  description: 'Full Stack Software Engineer Portfolio',
   icons: {
-    icon: "/faviconprofile.ico",
+    icon: '/faviconprofile.ico',
   },
-};
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <Analytics />
         {children}
       </body>
     </html>
-  );
+  )
 }

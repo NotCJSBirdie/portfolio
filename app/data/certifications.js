@@ -1,37 +1,51 @@
 export const certifications = [
   {
-    name: "DevOps and AI on AWS Specialization",
-    issuer: "Amazon Web Services (Coursera)",
-    date: "July 2025",
+    name: 'IBM Applied DevOps Engineering Professional Certificate',
+    issuer: 'IBM',
+    date: 'August 2025',
     description:
-      "Completed a three-course program covering Generative AI, CI/CD for AI applications, and AIOps on AWS. Developed skills in prompt engineering, serverless computing, containerization, AWS CloudFormation, and continuous integration/deployment.",
+      'Proficient in DevOps practices, Agile methodologies, and cloud-native technologies. Hands-on experience with Docker, Kubernetes, OpenShift, and CI/CD pipelines. Knowledgeable in Microservices, REST, and Serverless computing. Practiced Agile planning, deploying applications with Kubernetes, and automating testing and deployments. Built a strong DevOps portfolio for career advancement in software development and IT operations.',
   },
   {
-    name: "AWS Generative AI Applications Specialization",
-    issuer: "Amazon Web Services (Coursera)",
-    date: "July 2025",
+    name: 'IBM DevOps and Software Engineering Professional Certificate',
+    issuer: 'IBM',
+    date: 'August 2025',
     description:
-      "Completed a three-course program: AI Fundamentals and the Cloud, AWS Services for AI Solutions, and Bringing Ideas to Life Using AI. Developed skills in AI/ML, prompt engineering, solution architecture, AWS SageMaker, Amazon Bedrock, PartyRock, data management, and responsible AI implementation.",
+      'Gained a firm understanding of the DevOps mindset and Agile/Scrum methodologies. Applied skills in developing shell scripts using Linux commands, environment variables, pipes, and filters. Demonstrated proficiency in Python application development and use of automation, CI/CD tools including Chef, Puppet, GitHub Actions, Tekton, and Travis. Acquired skills in cloud-native, containerization, Kubernetes, Docker, and serverless architectures.',
   },
   {
-    name: "AWS Fundamentals Specialization",
-    issuer: "Amazon Web Services (Coursera)",
-    date: "June 2025",
+    name: 'DevOps and AI on AWS Specialization',
+    issuer: 'Amazon Web Services',
+    date: 'July 2025',
     description:
-      "Gained proficiency in AWS core services, security concepts, workload migration, and serverless application development through hands-on labs.",
+      'Completed a three-course program covering Generative AI, CI/CD for AI applications, and AIOps on AWS. Developed skills in prompt engineering, serverless computing, containerization, AWS CloudFormation, and continuous integration/deployment.',
   },
   {
-    name: "Google Project Management Certificate",
-    issuer: "Google (Coursera)",
-    date: "August 2024 – December 2024",
+    name: 'AWS Generative AI Applications Specialization',
+    issuer: 'Amazon Web Services',
+    date: 'July 2025',
     description:
-      "Enhanced expertise in managing complex projects and leading teams effectively.",
+      'Completed a three-course program: AI Fundamentals and the Cloud, AWS Services for AI Solutions, and Bringing Ideas to Life Using AI. Developed skills in AI/ML, prompt engineering, solution architecture, AWS SageMaker, Amazon Bedrock, PartyRock, data management, and responsible AI implementation.',
   },
   {
-    name: "Certificate of Recognition",
-    issuer: "Local Government Unit of Dumaguete City",
-    date: "May 2022",
+    name: 'AWS Fundamentals Specialization',
+    issuer: 'Amazon Web Services',
+    date: 'June 2025',
     description:
-      "Awarded for serving as a Resource Lecturer for the CSC Career Service Examination Review. Conducted 16 hours of training on Numerical Competency and English at NORSU Main Campus.",
+      'Gained proficiency in AWS core services, security concepts, workload migration, and serverless application development through hands-on labs.',
   },
-];
+  {
+    name: 'Google Project Management Certificate',
+    issuer: 'Google',
+    date: 'August 2024 – December 2024',
+    description:
+      'Enhanced expertise in managing complex projects and leading teams effectively.',
+  },
+  {
+    name: 'Certificate of Recognition',
+    issuer: 'Local Government Unit of Dumaguete City',
+    date: 'May 2022',
+    description:
+      'Awarded for serving as a Resource Lecturer for the CSC Career Service Examination Review. Conducted 16 hours of training on Numerical Competency and English at NORSU Main Campus.',
+  },
+]

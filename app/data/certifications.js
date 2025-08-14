@@ -1,5 +1,12 @@
 export const certifications = [
   {
+    name: 'IBM Back-End Development Professional Certificate',
+    issuer: 'Coursera (Authorized by IBM)',
+    date: 'August 2025',
+    description:
+      'Skilled in scaling techniques and methodologies including Docker, Kubernetes, microservices, and serverless functions. Proficient in writing back-end applications using server-side Python, version control, and package managers. Experienced in applying CI/CD and monitoring methodologies to streamline automation throughout the software development life cycle.',
+  },
+  {
     name: 'IBM Applied DevOps Engineering Professional Certificate',
     issuer: 'IBM',
     date: 'August 2025',

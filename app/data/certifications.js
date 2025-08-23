@@ -1,5 +1,12 @@
 export const certifications = [
   {
+    name: 'IBM Full Stack Software Developer Professional Certificate',
+    issuer: 'IBM',
+    date: 'August 2025',
+    description:
+      'Successfully completed 15 courses covering Application Development and Cloud technologies. Equipped with skills in HTML, CSS, JavaScript, GitHub, Node.js, React, Cloud-Native practices, DevOps, CI/CD, Containers, Docker, Kubernetes, OpenShift, Python, Databases (SQL & NoSQL), Django ORM, Bootstrap, Application Security, Microservices, and Serverless computing. Developed and deployed cloud applications, built a SaaS solution using Cloud-Native methodologies, and completed a capstone project.',
+  },
+  {
     name: 'IBM Back-End Development Professional Certificate',
     issuer: 'IBM',
     date: 'August 2025',

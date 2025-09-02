@@ -1,5 +1,13 @@
 export const certifications = [
   {
+    name: 'IBM Front-End Developer Professional Certificate',
+    issuer: 'IBM',
+    authorizedBy: 'Coursera',
+    date: 'September 2025',
+    description:
+      'This credential earner has mastered the latest front-end development skills and tools. Can create web pages using HTML, CSS, JavaScript, and React, and apply UI/UX principles and best practices. Possesses efficient code management skills using GitHub and has gained technical expertise through hands-on labs and projects, enabling the creation of an impressive portfolio and the ability to showcase these skills to potential employers. [See badge](https://www.credly.com/users/carl-serquina)',
+  },
+  {
     name: 'IBM Full Stack Software Developer Professional Certificate',
     issuer: 'IBM',
     date: 'August 2025',

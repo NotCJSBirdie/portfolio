@@ -1,8 +1,14 @@
 export const certifications = [
   {
+    name: 'IBM JavaScript Backend Professional Certificate',
+    issuer: 'IBM',
+    date: 'September 2025',
+    description:
+      'Successfully completed the IBM JavaScript Backend Professional Certificate. Demonstrated the ability to build the backend of cloud-native applications, including development, deployment, testing, running, and managing back-end applications. Utilized tools and methodologies such as HTML, CSS, JavaScript, Git, GitHub, Node.js, Express, Agile, NoSQL databases, containers, Docker, Kubernetes, OpenShift, DevOps, CI/CD, Microservices, and Serverless computing. Prepared to take on the challenges of an entry-level back-end developer role.',
+  },
+  {
     name: 'IBM Front-End Developer Professional Certificate',
     issuer: 'IBM',
-    authorizedBy: 'Coursera',
     date: 'September 2025',
     description:
       'This credential earner has mastered the latest front-end development skills and tools. Can create web pages using HTML, CSS, JavaScript, and React, and apply UI/UX principles and best practices. Possesses efficient code management skills using GitHub and has gained technical expertise through hands-on labs and projects, enabling the creation of an impressive portfolio and the ability to showcase these skills to potential employers. [See badge](https://www.credly.com/users/carl-serquina)',

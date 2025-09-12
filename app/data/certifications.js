@@ -1,5 +1,12 @@
 export const certifications = [
   {
+    name: 'IBM Full-Stack JavaScript Developer Professional Certificate',
+    issuer: 'IBM',
+    date: 'September 2025',
+    description:
+      'Demonstrated the ability to build, deploy, test, run, and manage cloud-native full-stack applications using JavaScript. Skilled in HTML, CSS, JavaScript, Git, GitHub, React, Node.js, Express, DevOps, Agile, CI/CD, NoSQL databases, Containers, Docker, Kubernetes, OpenShift, Microservices, and Serverless computing.',
+  },
+  {
     name: 'IBM JavaScript Backend Professional Certificate',
     issuer: 'IBM',
     date: 'September 2025',

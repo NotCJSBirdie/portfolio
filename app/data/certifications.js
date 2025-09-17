@@ -1,5 +1,12 @@
 export const certifications = [
   {
+    name: 'IBM AI Developer Professional Certificate',
+    issuer: 'IBM',
+    date: 'September 17, 2025',
+    description:
+      'Successfully completed the IBM AI Developer Professional Certificate. Acquired the core knowledge and practical skills to build web applications and generative AI-powered solutions. Gained a foundational understanding of programming concepts and the Software Development Lifecycle (SDLC). Learned techniques and applications related to AI, including generative AI and prompt engineering. Demonstrated the ability to design and develop web applications using HTML, CSS, JavaScript, Python, and Flask, and build chatbots and innovative solutions using generative AI models, tools, and technologies. ',
+  },
+  {
     name: 'IBM Full-Stack JavaScript Developer Professional Certificate',
     issuer: 'IBM',
     date: 'September 2025',
